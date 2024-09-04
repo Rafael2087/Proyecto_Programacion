@@ -18,11 +18,11 @@ A continuación se muestra el diagrama que se va a seguir para el desarrollo e i
 graph TD;
     A("Inicio de Partida") --> B("¿Nivel de dificultad?")
     B-->C{¿Facíl?}
-    C--SI-->D(Seleccionar una palabra aleatoria con una cantidad menor o igual a 5 letras)-->Da[Intentos = 2*N° Letras]
+    C--SI-->D(Seleccionar una palabra aleatoria con una cantidad menor o igual a 5 letras)-->Da[Intentos = Letras+3]
     C--NO-->E{¿Medio?}
-    E--SI-->F(Seleccionar una palabra aleatoria con una cantidad 5 < letras <= 10)-->Fa[Intentos = N° Letras + 5]
+    E--SI-->F(Seleccionar una palabra aleatoria con una cantidad 5 < letras <= 10)-->Fa[Intentos = N° Letras + 2]
     E--NO-->G(Nivel Dificil)
-    G-->H(Seleccionar una palabra aleatoria con una cantidad de letras mayor a 10)-->Ha[Intentos = N° Letras +2]
+    G-->H(Seleccionar una palabra aleatoria con una cantidad de letras mayor a 10)-->Ha[Intentos = N° Letras]
     Da-->J
     Fa-->J
     Ha-->J[Inicializar Variables]
