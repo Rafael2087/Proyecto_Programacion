@@ -44,6 +44,28 @@ graph TD;
     Aa--NO-->Fin
 
 ```
+
+
+### Librerías a utilizar
+| RANDOM|
+| ----------- |
+|Ofrece generadores de números pseudo-aleatorios para varias distribuciones.Un generador de números aleatorios es un objeto que crea una secuencia de valores seudoaleatorios. Un generador que crea valores distribuidos uniformemente en un rango especificado es un generador de números aleatorios uniformes (URNG). |
+
+| TIME|
+| ----------- |
+|Proporciona un conjunto de funciones para trabajar con fechas y/o horas. Además de estás funciones hay otras relacionadas en los módulos datetime y calendar que conviene conocer|
+
+| THINKER|
+| ----------- |
+|Es una librería del lenguaje de programación Python y funciona para la creación y el desarrollo de aplicaciones de escritorio. Esta librería facilita el posicionamiento y desarrollo de una interfaz gráfica de escritorio con Python.|
+
+| PIL|
+| ----------- |
+|Python Imaging Library (PIL) es una librería gratuita que permite la edición de imágenes directamente desde Python|
+
+| TKINTER.MESSAGEBOX|
+| ----------- |
+|Proporciona una clase base de plantilla, así como una variedad de métodos convenientes para configuraciones de uso común. Los cuadros de mensaje son modales y devolverán un subconjunto de (Verdadero, Falso, OK, Ninguno, Sí, No) según la selección del usuario|
 ### Código Base
 
 EL codigo base para que funcione el ahorcado es el siguiente
@@ -81,20 +103,7 @@ if __name__ == "__main__":
 ```
 Este codigo es el que permite que el ahorcado funcione con lo que solamente sería agregarle las opciones de dificultad y otras alternativas extras para jugar.
 
-### Librerías a utilizar
-| RANDOM|
-| ----------- |
-|Ofrece generadores de números pseudo-aleatorios para varias distribuciones.Un generador de números aleatorios es un objeto que crea una secuencia de valores seudoaleatorios. Un generador que crea valores distribuidos uniformemente en un rango especificado es un generador de números aleatorios uniformes (URNG). |
-
-| TIME|
-| ----------- |
-|Proporciona un conjunto de funciones para trabajar con fechas y/o horas. Además de estás funciones hay otras relacionadas en los módulos datetime y calendar que conviene conocer|
-
-| THINKER|
-| ----------- |
-|Es una librería del lenguaje de programación Python y funciona para la creación y el desarrollo de aplicaciones de escritorio. Esta librería facilita el posicionamiento y desarrollo de una interfaz gráfica de escritorio con Python.|
-
-### Funciones que se tendran en cuenta
+### Funciones que se tendrán en cuenta
 #### Def generar palabra
 ----------------------
 De utiliza la libreria **random.choice**, la cual devuelve un valor aleatorio extraído de la secuencia pasada como argumento, es decir, permite el ingreso a la  lista que contiene las palabras y retorna un elemento (palabra) aleatoria.
@@ -188,6 +197,19 @@ def num_intentos (nivel : int, palabra : str):
         num_intentos = len(palabra)+2
     elif nivel == 3:
         num_intentos = len(palabra)
-    return num_intentos
-        
-```      
+    return num_intentos        
+```
+#### Inicio de Interfaz gráfica
+----------------------
+```python
+
+from tkinter import *
+
+raiz = Tk()
+raiz.config(width = 800, height  = 600, bg ="blue", relief="groove", bd=10)
+juego_ahorcado = Frame (raiz)
+juego_ahorcado.config (width=800, height =600, relief ="sunken", bd =15)
+juego_ahorcado.pack
+
+raiz.mainloop() #indica a la interfaz que debe quedarse esperando a que el usuario haga algo.
+```
