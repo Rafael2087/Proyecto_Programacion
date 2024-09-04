@@ -79,3 +79,4 @@ if __name__ == "__main__":
     print(f'Tiempo de juego: {(fin - inicio)} segundos')
 
 ```
+Este codigo es el que permite que el ahorcado funcione con lo que solamente sería agregarle las opciones de dificultad y otras alternativas extras para jugar.
