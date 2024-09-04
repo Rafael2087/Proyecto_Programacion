@@ -47,7 +47,7 @@ graph TD;
 ### Código Base
 
 EL codigo base para que funcione el ahorcado es el siguiente
-```
+```python
 import random
 import time
 if __name__ == "__main__":
@@ -80,3 +80,20 @@ if __name__ == "__main__":
 
 ```
 Este codigo es el que permite que el ahorcado funcione con lo que solamente sería agregarle las opciones de dificultad y otras alternativas extras para jugar.
+
+### Librerías a utilizar
+- Random
+- Time
+- Thinker
+
+| RANDOM|
+| ----------- |
+|Ofrece generadores de números pseudo-aleatorios para varias distribuciones |
+
+| TIME|
+| ----------- |
+| **Ahorcado** o Hangman es una juego que consiste en adivinar una palabra al azar, la manera en la cual se desarrolla es una determinado numero de rayas al piso **_** de acuerdo a la cantidad de letras de la plaabra, posterior el jugador sugiere una letra, si esta letra está dentro de la palabra se sustiye el guión en la posicion de la letra por la misma, esto se repite hasta que se adivine por completo la palabra o se acaben la cantidad de intentos |
+
+| THINKER|
+| ----------- |
+| **Ahorcado** o Hangman es una juego que consiste en adivinar una palabra al azar, la manera en la cual se desarrolla es una determinado numero de rayas al piso **_** de acuerdo a la cantidad de letras de la plaabra, posterior el jugador sugiere una letra, si esta letra está dentro de la palabra se sustiye el guión en la posicion de la letra por la misma, esto se repite hasta que se adivine por completo la palabra o se acaben la cantidad de intentos |
