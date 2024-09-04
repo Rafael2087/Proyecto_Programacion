@@ -1,5 +1,5 @@
-import random
-import time
+import random, time, tkinter
+
 palabras_español= [
     "abajo", "abierto", "abogado", "abrazo", "aceptar", "acerca", "aclamar", "acordar", "accion", "acero",
     "adivinar", "aereo", "afligir", "agregar", "alarma", "alegria", "aliento", "alineado", "almuerzo", "alquilar",
