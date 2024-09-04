@@ -17,11 +17,59 @@ palabras_español= [
     "poder", "poner", "pregunta", "puerta", "rapido", "ropa", "salir", "saber", "salud", "semana",
     "ser", "servicio", "silla", "sopa", "tarde", "te", "telefono", "tiempo", "toma", "trabajo"
 ]
+def facil (palabra : str):
+    if len(palabra) < 5:
+        return True
+    
+def medio(palabra : str):
+    if len(palabra) >= 5 and len(palabra) <= 8:
+        for i in palabra:
+            if palabra.count(i) <= 3:
+                return True
+            else:
+                return False
+    else:
+        return False
+
+def dificil(palabra : str):
+    if len(palabra) > 8:
+        for i in palabra:
+            if palabra.count(i) <= 2:
+                return True
+            else:
+                return False
+    else:
+        return False
+    
+def ListaFacil(lista : list):
+    listaFacil = []
+    for i in lista:
+        if facil(i):
+            listaFacil.append(i)
+    return listaFacil
+
+def ListaMedio(lista : list):
+    listaMedio = []
+    for i in lista:
+        if medio(i):
+            listaMedio.append(i)
+    return listaMedio
+
+def ListaDificil(lista : list):
+    listaDificil = []
+    for i in lista:
+        if dificil(i):
+            listaDificil.append(i)
+    return listaDificil
+lista_facil = ListaFacil(palabras_español)
+lista_media = ListaMedio(palabras_español)
+lista_dificil = ListaDificil(palabras_español)
 
 if __name__ == "__main__":
     palabra : str = random.choice(palabras_español)
     ahorcado : str = "_" * len(palabra)
     errores : int = 0
+    
     inicio : float = time.time()
     while errores < len(palabra) + 3 :
         letra : str = str(input("Dijite un letra: "))
