@@ -96,7 +96,8 @@ Este codigo es el que permite que el ahorcado funcione con lo que solamente ser�
 
 ### Funciones que se tendran en cuenta
 #### Def generar palabra
-De utiliza la libreria **random.choice**, la cual devuelve un valor aleatorio extraído de la secuencia pasada como argumento
+----------------------
+De utiliza la libreria **random.choice**, la cual devuelve un valor aleatorio extraído de la secuencia pasada como argumento, es decir, permite el ingreso a la  lista que contiene las palabras y retorna un elemento (palabra) aleatoria.
 ```python
 def generar_palabra (nivel : int ):
     if nivel == 1:
@@ -175,3 +176,18 @@ def generar_palabra (nivel : int ):
     return palabra
 
 ```
+
+#### Def num_intentos
+----------------------
+```python
+def num_intentos (nivel : int, palabra : str):
+    num_intentos : int = 0
+    if nivel == 1:
+        num_intentos = len(palabra) + 3
+    elif nivel == 2:
+        num_intentos = len(palabra)+2
+    elif nivel == 3:
+        num_intentos = len(palabra)
+    return num_intentos
+        
+```      
