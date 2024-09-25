@@ -66,6 +66,20 @@ graph TD;
 | TKINTER.MESSAGEBOX|
 | ----------- |
 |Proporciona una clase base de plantilla, así como una variedad de métodos convenientes para configuraciones de uso común. Los cuadros de mensaje son modales y devolverán un subconjunto de (Verdadero, Falso, OK, Ninguno, Sí, No) según la selección del usuario|
+
+| OS|
+| ----------- |
+|Permite realizar operaciones dependiente del Sistema Operativo como crear una carpeta, listar contenidos de una carpeta, conocer acerca de un proceso, finalizar un proceso, etc.|
+
+| UNICODE |
+| ----------- |
+|Representar caracteres, lo que permite a los programas de Python trabajar con todos estos caracteres posibles diferentes.|
+
+| MSVCRT |
+| ----------- |
+|Desbloquea los bytes especificados que han sido previamente bloqueados. Establece el modo traducción del final de línea del descriptor de un archivo fd.|
+
+
 ### Código Base
 
 EL codigo base para que funcione el ahorcado es el siguiente
@@ -109,84 +123,23 @@ Este codigo es el que permite que el ahorcado funcione con lo que solamente ser�
 ----------------------
 De utiliza la libreria **random.choice**, la cual devuelve un valor aleatorio extraído de la secuencia pasada como argumento, es decir, permite el ingreso a la  lista que contiene las palabras y retorna un elemento (palabra) aleatoria.
 ```python
-def generar_palabra (nivel : int ):
-    if nivel == 1:
-        nivel_facil = [
-    "agua", "amor", "ancho", "arte", "avión", "bajo", "barco", "bebé", "boca", "bola", "brazo", "burro", "calle", "cama", "casa", "cielo", "cine", "clima", "coche", "codo",
-    "cola", "conejo", "copa", "cubo", "dedo", "días", "dios", "duda", "duro", "eco", "edad", "elba", "enano", "esos", "este", "éter", "fama", "faro", "fiar", "fiel",
-    "flor", "frío", "gato", "giro", "goma", "hilo", "hombre", "hoja", "hora", "hueso", "idea", "iglesia", "imán", "iso", "jugo", "juez", "lago", "lana", "lata", "león",
-    "libro", "lima", "limón", "lobo", "luna", "mala", "mano", "mar", "miel", "misa", "mono", "muro", "nube", "ojo", "olor", "oro", "oso", "pala", "pelo", "pico",
-    "pie", "piso", "plata", "plomo", "poco", "polo", "pomo", "puma", "puño", "rayo", "red", "reír", "río", "rosa", "roto", "rueda", "sala", "salto", "seda", "seis","silla", "sol", "sopa", "techo", "té",
-    "tela", "tren", "tres", "tubo", "uva", "velo", "ver", "vía", "vida", "vivo", "voto", "yate", "zapa", "zona", "zorro", "aire", "alto", "amor", "andar", "apto", "árbol", "arma", "aula", "azar", "bajo",
-    "bala", "bata", "boca", "bono", "bota", "buzo", "cama", "cara", "carro", "ceja", "celo", "cima", "cita", "club", "cola", "coro", "cuna", "cupo", "dato", "día",
-    "dona", "eco", "edad", "edad", "elef", "emir", "fama", "fiar", "fiel", "fino", "foca", "gato", "giro", "goma", "grúa", "hilo", "hoyo", "huir", "jugo", "juez",
-    "lago", "lana", "lata", "leña", "liso", "lobo", "lodo", "loro", "lujo", "lupa", "mano", "mayo", "menta", "mono", "muro", "nave", "nido", "niño", "nube", "oro",
-    "oso", "pala", "pase", "pelo", "pico", "pie", "piso", "plata", "plomo", "poco", "polo", "puma", "rayo", "río", "ropa", "rueda", "saco", "seda", "sol", "sopa",
-    "suma", "tajo", "tapa", "taza", "techo", "té", "tela", "tema", "tren", "tubo", "tuna", "uñas", "uno", "uva", "vaca", "vela", "vía", "vida", "vivo", "voto",
-    "yate", "zaga", "zar", "zorro", "zumo", "año", "agua", "alto", "auto", "azul", "bajo", "bala", "baño", "barro", "boca", "bote", "buzo", "café", "caja", "calor",
-    "cara", "casa", "ceja", "celo", "cine", "cima", "cita", "copa", "cubo", "día", "dios", "duro", "eco", "edad", "fama", "faro", "fiar", "fiel", "flor", "foca",
-    "fuego", "gato", "giro", "goma", "hilo", "hueso", "idea", "imán", "isla", "juez", "lago", "lana", "lata", "león", "libro", "liso", "lobo", "lodo", "luz", "mano",
-    "mar", "mesa", "miel", "mono", "moto", "muro", "nube", "nudo", "nudo", "nuez", "oro", "oso", "palo", "pato", "pelo", "pico", "pie", "piso", "plata", "poco",
-    "polo", "rojo", "rosa", "roto", "ruda", "rueda", "seda", "sol", "sopa", "tajo", "taza", "té", "tela", "tema", "tren", "tuna", "uno", "uva", "velo", "vía",
-    "vida", "vivo", "yate", "zorro", "aire", "alto", "alma", "andar", "ancho", "apto", "arma", "arte", "bajo", "baño", "boca", "bola", "bote", "buzo", "café", "cama",
-    "casa", "cima", "copa", "coro", "día", "dios", "duro", "eco", "edad", "fama", "fiar", "fiel", "foco", "frío", "gato", "giro", "gris", "hilo", "hoja", "hora",
-    "hueso", "idea", "imán", "jugo", "juez", "lago", "lana", "león", "lobo", "luz", "mano", "mar", "mesa", "miel", "mono", "nube", "nudo", "oro", "oso", "palo",
-    "pato", "pelo", "pico", "pie", "piso", "plata", "rojo", "rosa", "seda", "sol", "sopa", "té", "tren", "tuna", "uno", "uva", "velo", "vida", "vivo", "yate",
-    "zorro", "aire", "alto", "alma", "andar", "ancho", "apto", "arma", "arte", "bajo", "baño", "boca", "bola", "bote", "buzo", "café", "cama", "casa", "cima", "copa"
-]
-        palabra : str = choice (nivel_facil)
-    elif nivel == 2:
-        nivel_medio = [
-    "caminar", "familia", "ventana", "comedor", "espejos", "frutero", "montaña", "invierno", "tornillo", "ventajas", "escuela", "guitarra", "elefante", "bosques", "naranja", "libreta", "peluche", "recoger", "pasteles", "pantalla",
-    "lampara", "océanos", "alfombra", "mujeres", "colores", "praderas", "desfile", "oficina", "carnaval", "buzones", "mariposa", "complejo", "muñecos", "empresas", "murciélago", "computar", "programa", "caballos", "frescos", "historias",
-    "estación", "progreso", "mensaje", "océano", "jirafas", "esmalte", "rotación", "carreras", "esquemas", "diálogos", "agendas", "solución", "mamifero", "ilusión", "cadenas", "charcos", "libreta", "numeros", "desierto", "observa",
-    "ejemplo", "cuchillo", "lanzador", "pulmones", "soportes", "burbujas", "cabellos", "cantante", "cascadas", "deportes", "remolque", "pasteles", "cemento", "películas", "análisis", "durmiente", "volcánes", "celular", "fábricas", "ferozes",
-    "personas", "superior", "técnico", "eternidad", "medallas", "sinfonía", "elefante", "cordones", "peluquer", "lagartos", "caballer", "colegios", "leoneses", "mecánica", "escalera", "hormigas", "corbatas", "espejos", "morenas", "teléfonos",
-    "diversos", "partidos", "cuadros", "carteros", "ruidosos", "magnitud", "camiones", "ganancias", "encender", "duraznos", "elegante", "noticias", "escribir", "sectores", "alegría", "aviones", "banquetes", "colillas", "volcánico", "muñecos",
-    "banqueta", "furgoneta", "destinos", "criaturas", "galletas", "campanas", "mientras", "muchacha", "equivoca", "pequeñas", "maestros", "carteras", "maizales", "hipopót", "costillas", "golpeado", "galáctico", "comercio", "horizont", "máquina",
-    "realizar", "pintores", "ventanas", "alcanza", "exámenes", "neblina", "vigilant", "libros", "golondri", "jugadores", "cobertor", "atardecer", "pasatiem", "relaciones", "filósofo", "romántico", "chocolat", "ejercito", "observac", "familias",
-    "actrices", "voladores", "proyectos", "traducción", "números", "empezar", "internos", "galáctico", "disfrutar", "comienzo", "tormenta", "diversió", "solitarios", "veterinar", "bebedores", "bajonero", "mentiros", "cotidian", "miembros", "lúgubre",
-    "combinac", "ternura", "dibujado", "observar", "comienza", "susurros", "terrenos", "imágenes", "mensajes", "mortales", "almohada", "trapezo", "nochecer", "añorados", "invasión", "guerrero", "pantalla", "sucedido", "montañas", "papelería",
-    "muñecas", "tejedora", "gimnasia", "paraguas", "corredor", "cuentame", "eternida", "colección", "microcosm", "chacales",  "luchador", "despacho", "avanzar", "mercado", "galletas", "cansados", "procesos", "navieras", "escalón", "camarones",
-    "bromista", "bucanero", "facturar", "pelotero", "plegaria", "devolver", "poesía", "verso", "empezar", "adorable", "dividido", "comedian", "insomnio", "fiabilidad", "cadena", "parlante", "llamadas", "magnitud", "infinito", "nervioso",
-    "intensos", "tornados", "golondri", "planetar", "microbio", "común", "abundanc", "laborios", "mercader", "honestos", "acertijo", "conjunto", "estudiante", "dispuesto", "encuentro", "emisiones", "avanzado", "responsa", "humedades", "emoción",
-    "monument", "sudamérica", "incluso", "observado", "infinitos", "espectro", "fiabilidad", "rumorosa", "emisión", "pantalón", "agencias", "deberes", "muñequero", "explosión", "invisible", "confianza", "calamidad", "comenzar", "cristales", "danzarín",
-    "abandonar", "marinero", "indígena", "dormitor", "mimado", "cazadora", "manivela", "palomita", "rebobinar", "turbinas", "casimira", "dividida", "adelante", "puñetazo", "eléctrica", "claridad", "salvador", "abrazado", "invocación", "despierta",
-    "hamburguesa", "armadillo", "diezmado", "bailador", "rector", "necesitar", "giratorio", "retirarse", "soledad", "empezado", "superar", "cansancio", "paisajes", "rescate", "compañer", "escalera", "vegetal", "permutar", "mentiros", "pasearse",
-    "flotante", "decidido", "bajo", "alquilar", "convidar", "llorar", "adquirir", "subir", "segundo", "aventura", "escondid", "palomino", "enlazado", "afectivo", "promesa", "compañía", "camellos", "caballero", "revelar", "necesario",
-    "terremot", "cósmicos", "iracundo", "cárcel", "suavidad", "desprender", "fragmento", "televisor", "aluminio", "naufragio", "secretar", "sociedad", "coronado", "brindado", "justicia", "suspirar", "gigantes", "comandant", "músico", "director", "simular", "desdicha", "observar", "criminal", "comodidad", "dispuesto", "disponibl", "santuario", "bajo", "afligido",
-    "tentación", "renovador", "instrumento", "reverso", "oportuno", "personal", "afectuoso", "acertado", "cabañero", "límite", "dedicar", "avistaje", "matrimonio", "justo", "ferrocarril", "barbarid", "tratado", "asegurad", "respland", "alucinac"
-]
-        palabra : str = choice (nivel_medio)
-    elif nivel == 3:
-        nivel_dificil = ["inconmensurable", "caracterización", "desenmascarador", "incompatibilidad", "transubstanciación","irrefutablemente", "descomposición", "desenredadamente", "indeterminación", "transversalidad","morfosintáctico", "conjeturalmente", "psiconeuroinmunología", "indescriptiblemente", "extraordinariamente",
-    "hiperboloidales", "interdisciplinario", "intrascendental", "desinstitucionalización", "desintegración","subdesarrollado", "hiperactividad", "desentumecimiento", "incoherentemente", "incongruencia", "incondicionalidad", "incomunicabilidad", "descomunalmente", "psicoterapéutico", "desestabilización",
-    "desescalarización", "involuntariamente", "desproporcionado", "interculturalismo", "inexplicablemente","desenfrenadamente", "extraoficialmente", "interdependencia", "inapreciablemente", "inconmensurabilidad","hiperparasitismo", "deshumanización", "desenterramiento", "involucramiento", "transculturización",
-    "autobiográficamente", "extraordinariamente", "intercontinental", "intraducibilidad", "sobrealimentación","característicamente", "desnaturalización", "superficialmente", "incomunicacional", "inapreciablemente","transcendentalidad", "ultraconservador", "desmembramiento", "indispensabilidad", "hiperindividualismo",
-    "neurotransmisores", "multidisciplinar", "desencadenamiento", "interrelacionado", "anticonstitucional","interinstitucional", "desmitologización", "supercompensación", "hiperrealización", "infraestructura","invisibilidad", "incontestablemente", "desplazamiento", "parapolicialmente", "inconmensurable",
-    "superdesarrollado", "transgresivamente", "intergeneracional", "desarticulación", "incomparablemente","inconformabilidad", "descontextualización", "neoliberalización", "superestratificación", "hiperresponsabilidad","desinstitucionalización", "intransigentemente", "deslegitimación", "extracurricular", "desenfrenadamente",
-    "inconsiderablemente", "desensibilización", "hiperventilación", "contradictoriamente", "suprasensible","extrapiramidal", "desescolarización", "antirreligiosamente", "interrelacionamiento", "hipercompetitividad","extragaláctico", "desinteresadamente", "hiperresponsable", "autofinanciación", "interdisciplinario",
-    "irresponsablemente", "sobreestimulación", "superpotencial", "desmaterialización", "psicofarmacología", "autotransformación", "extraoficialidad", "indistinguibilidad", "hiperinmunización", "desmitificación","subalimentación", "interaccionismo", "intransmisiblemente", "descentralización", "transnacionalización",
-    "subterráneamente", "desindustrialización", "neurodiversidad", "autorreflexividad", "desencriptamiento","superficialidad", "hiperintensificación", "infraestimación", "parainstitucional", "parapsicológico","involuntariadamente", "extralingüístico", "parapsicológico", "contraargumentación", "desencriptado",
-    "supramolecular", "interoceánico", "desorientación", "desoxidación", "contraofensiva", "descomunalmente","superimposición", "desprofesionalización", "extraterritorial", "interconexión", "inexplorablemente","desenmascaramiento", "incompletamente", "irreflexivamente", "extracorpóreo", "involuntariamente",
-    "subempleado", "subestimación", "transvaloración", "ultrasónico", "extracurricular", "infraestructura", "interdepartamental", "subdesarrollado", "subjetivización", "superproporción", "intransitividad", "superespecialización", "infrautilización", "hipersensibilidad", "autotrasplante", "infraestructura","subestimación", "despolitización", "interdepartamental", "superimportante", "transculturalización",
-    "superintelectual", "destrucción", "superficialidad", "ultracompetitivo", "interdisciplinariedad","transversalidad", "subempleado", "contraordenación", "inapreciablemente", "extraordinario", "irremediablemente", "subestación", "superabundancia", "ultraindividualismo", "subespecie", "irrealizabilidad", "transicional","subvaloración", "ultrarracionalismo", "superespecificidad", "desarrollabilidad", "extraoficialidad",
-    "hiperindividualismo", "intertransmisión", "ultrasonografía", "subalternización", "descodificación","interrelacionado", "autotranscendente", "supraterrenal", "neotranscendentalismo", "subvaloración","ultrasensorial", "desarticulación", "superproducción", "irreflexión", "superposicionalidad",
-    "transmutación", "subregionalización", "hiperinflación", "irrealizabilidad", "transgeneracional","descentralización", "infrautilización", "transdisciplinar", "superintelectual", "subespecialización", "infraestructura", "superficialidad", "infraordinario", "subexplotación", "transfuncionalidad",
-    "subestimación", "infrautilización", "desnaturalización", "hipermoralista", "hiperpolarización","superorganización", "subtransversal", "infrautilización", "infraordenado", "hipermovilización","superrepresentación", "hiperaceleración", "transnacionalización", "subterráneo", "subdesarrollo",
-    "intrascendencia", "supercomplejidad", "infrahumano", "infrautilizado", "superproducción", "hipermotivación","subproducto", "transculturalidad", "subempleado", "superexplotación", "subutilización", "ultrasonido","superdotación", "subempleo", "ultrarracional", "supervivencia", "infraestructura", "subordinación",
-    "transfeminismo", "subversión", "supranacional", "subempleado", "superposición", "hiperventilación", "suprarrealidad", "hipermodernidad", "hipermovilidad", "superposición", "ultrasensorial", "intransferible","superespecialización", "infraestructura", "infrautilización", "ultraconservador", "supercognición",
-    "infraestimación", "subemprendedor", "superproporción", "infrautilización", "subespecie", "transnacionalización","subvaloración", "superestructuración", "subempleo", "supramolecular", "supertranscendencia", "subespecialización","infrautilización", "ultrarracionalidad", "transgeneracionalidad", "subespecie", "hiperespecialización",
-    "superutilización", "subestimación", "superdotación", "hiperinflacionario", "ultraordinario", "infrautilización", "superregulación", "supranacionalismo", "subespecialización", "hipermoralismo", "subcomplejidad", "infraestructural", "transversalidad", "superinteresante", "infraordinario", "superespecialización",
-    "subregionalización", "infraordinario", "superordinado", "supranacionalismo", "infrautilización","superdotación", "superficialidad", "infraestructura", "subalternización", "superexplotación","infrautilización", "infrahumano", "hiperespecialización", "transdisciplinariedad", "subempleo", "infraestructural",
-    "superimposición", "infraestructural", "transfronterizo", "superespecialización", "suprasensible","infraestructural", "supercomplejidad", "subespecialización", "infraestructura", "supercognitivo", "hiperespecialización", "subespecialización", "infrautilización", "infrahumano", "infraestructural",
-    "infrautilización", "subempleo", "superexplotación", "infrautilización"
-]
-        palabra : str = choice (nivel_dificil)
+def ListaFacil(lista: list): # Función para crear una lista de palabras fáciles
+    return [eliminar_acentos(i) for i in lista if facil(i)]
+
+def ListaMedio(lista: list): # Función para crear una lista de palabras de dificultad media
+    return [eliminar_acentos(i) for i in lista if medio(i)]
+
+def ListaDificil(lista: list): # Función para crear una lista de palabras difíciles
+    return [eliminar_acentos(i) for i in lista if dificil(i)]
+
+def dificil_interfaz():
+    vidas: int = 11
+    lista: list = ListaDificil(palabras_español)
+    palabra: str = random.choice(lista)
+    palabra = eliminar_acentos(palabra)
+    print(f"Palabra seleccionada: {palabra}")
     return palabra
-
 ```
-
 #### Def num_intentos
 ----------------------
 ```python
@@ -202,15 +155,76 @@ def num_intentos (nivel : int, palabra : str):
 ```
 #### Inicio de Interfaz gráfica
 ----------------------
+Se utilizaron 3 interfaces con el fin de crear un ambiente más interactivo con el usuario
+```python
+def interfaz_1():
+        global interfaz_inicio #Se declara global ya que se elimina en un punto y se necesitan algunos datos que se encuentran en la misma
+        # Ventana 1
+        #Se utiliza la libreria Tk
+        interfaz_inicio = Tk()
+        interfaz_inicio.config(width=600, height=600, bg="blue", relief="groove", bd=10)
+        interfaz_inicio.geometry("800x400") #Dimension de la interfaz
+        #Se utiliza canvas para poder trabajar sobre imagenes 
+        inicio = Canvas(interfaz_inicio, width=600, height=600)
+        inicio.pack(expand=True, fill="both") #Permite que se mantenda las dimensiones de la interfaz
+
+        #Se crean label o widgets  para mostrar y permitir el ingreso de informacion
+        label_1 = Label(inicio, text="Bienvenidos a HANGMAN \n un juego extraordinario \n Hecho por los mejores", font=("Terminal", 18))
+        label_1.grid(column=0, padx=0, pady=0) #Permite ubicar los label en la posicion que se quiera
+
+        # Etiqueta para el nombre del jugador
+        nombre_jugador_label = Label(inicio, text="Introduce tu nombre Jugador", font=("Courier", 18))
+        nombre_jugador_label.grid(padx=30, pady=20)
+        
+        # Entrada para el nombre del jugador
+        nombre_entry = Entry(inicio, width=20, font=("Verdana", 24))
+        nombre_entry.grid(padx=30, pady=20)
+
+        # Botón para seleccionar el nivel de dificultad
+        nivel_dificultad = Button(inicio, text="Siguiente", command=lambda: mostrar_interfaz_2(nombre_entry.get())) #Permite cambiar de ventana
+        nivel_dificultad.grid(padx=30, pady=0)
+        
+        #Funcion para poner imagenes en la interfaz
+        imagen_logo = PhotoImage(file="logo_mecaprores.png")
+        logo = inicio.create_image(600, 190, image=imagen_logo)
+        
+        interfaz_inicio.mainloop() # mantiene la ventana activa hasta que se hace clic en el botón cerrar
+```
+#### Cambio de la interfaz
+----------------------
+Debido a que se estaba utilizando imagenes en el canvas de la interfaces, en el momento de abrir otra interfaz generaba error debido a que las imegenes quedaban guardas en la memoria del canvas, haciendo dificil ejecutar el codigo de la manera correcta, por ello se utiliza *.destroy()* La cual elimina la interfaz para poder abrir la nueva
+```python
+#Funcion para cambiar de ventana, pasar de ventana 1 a ventana 2
+    def mostrar_interfaz_2(nombre):
+        global interfaz_inicio
+        interfaz_inicio.destroy() #Elimina la interfaz
+        interfaz_2_nivel(nombre)
+```
+#### Cambio en los botones de la interfaz
+----------------------
+Se busco un forma optima de que un boton pudieron ejecutar con dos o mas funciones a la vez, de la manera en la cual se crea funciones dentro de funciones.
+```python
+def mostrar_botones_idioma():
+        global palabra_seleccionada
+        # Mostrar botones de idioma
+        idioma_label = Label(inicio_2, text="Elige el idioma", font=("Courier", 10))
+        idioma_label.grid(column=8, padx=200, pady=20)
+
+        #funcion para que un boton pueda cumplir con 2 o mas funciones
+        def iniciar_aleman():
+            global palabra_seleccionada
+            palabra_seleccionada = aleman()
+            mostrar_juego_hangman("nombre")
+            return palabra_seleccionada #Retorna la palabra seleccionada
+
+        idioma_aleman = Button(inicio_2, text="Alemán", command=iniciar_aleman) #Boton que realiza la funcion de ingresar a la lista y elegir una palabra al azar
+        idioma_aleman.grid(column=8, padx=200, pady=0)
+```
+
+#### Cambio en los botones de la interfaz
+----------------------
+Se busco un forma optima de que un boton pudieron ejecutar con dos o mas funciones a la vez, de la manera en la cual se crea funciones dentro de funciones.
 ```python
 
-from tkinter import *
 
-raiz = Tk()
-raiz.config(width = 800, height  = 600, bg ="blue", relief="groove", bd=10)
-juego_ahorcado = Frame (raiz)
-juego_ahorcado.config (width=800, height =600, relief ="sunken", bd =15)
-juego_ahorcado.pack
-
-raiz.mainloop() #indica a la interfaz que debe quedarse esperando a que el usuario haga algo.
 ```
