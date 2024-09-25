@@ -223,8 +223,31 @@ def mostrar_botones_idioma():
 
 #### Cambio en los botones de la interfaz
 ----------------------
-Se busco un forma optima de que un boton pudieron ejecutar con dos o mas funciones a la vez, de la manera en la cual se crea funciones dentro de funciones.
+Se creo una secuencia de imagenes que se mostrarian secuencialmente en cada fallo que se tenga. Cabe aclarar que para que las imagen funciones deben estan en el mismo folden el codigo general.  
+[![Captura-de-pantalla-2024-09-25-104134.png](https://i.postimg.cc/Gp785yC2/Captura-de-pantalla-2024-09-25-104134.png)](https://postimg.cc/Tyb3yhhM)
 ```python
+imagenes = [
+            PhotoImage(file="11.png"),
+            PhotoImage(file="10.png"),
+            PhotoImage(file="9.png"),
+            PhotoImage(file="8.png"),
+            PhotoImage(file="7.png"),
+            PhotoImage(file="6.png"),
+            PhotoImage(file="5.png"),
+            PhotoImage(file="4.png"),
+            PhotoImage(file="3.png"),
+            PhotoImage(file="2.png"),
 
+        ]
+        primer_imagen = hangman.create_image(750, 330, image=imagenes[9])
 
 ```
+#### Proceso de descarga del programa
+----------------------
+- Entra al repositorio en Githug, posterior entra al readme y seleccion el documento que se muestra a continuación.
+[![a.png](https://i.postimg.cc/NfSdWKQd/a.png)](https://postimg.cc/4mvvcN7c)
+- Ingresas en el archivo .rar
+[![b.png](https://i.postimg.cc/NFVxqnvK/b.png)](https://postimg.cc/4H6cpBdG)
+- En la parte superior derecha le das en los tres puntitos y se despliega un menú, le debes dar clic en descargar o *ctr+shif+s*
+ [![c.png](https://i.postimg.cc/J4fQpSQg/c.png)](https://postimg.cc/zVkWBt6S)
+- Se hace la descarga y se descomprime en la carpeta que se desea
